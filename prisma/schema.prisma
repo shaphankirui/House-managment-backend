@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email     String  @unique
+  password  String
+  firstName String
+  lastName  String?
+  Blog      Blog[]
+  Order     Order[]
+
+  @@map("users")
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  body      String
+  pictureUrl String?
+  createdAt DateTime @default(now())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("blogs")
+}
+
+model Product {
+  id           Int      @id @default(autoincrement())
+  name         String
+  description  String
+  pictureUrl   String?
+  availability Boolean
+  quantity     Int
+  countable    Boolean? @default(true)
+  price        Float
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  categoryId     Int
+
+category  Category @relation(fields: [categoryId], references: [id])
+
+  @@map("products")
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  pictureUrl  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Product     Product[]
+
+
+  @@map("categories")
+}
+
+model Order {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  items     Json     // Store order items as JSON
+  total     Float
+  status    String
+  payment   Float
+  customer  String
+  location  String
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+}

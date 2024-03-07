@@ -6,6 +6,7 @@ import { BlogModule } from './blog/blog.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
+import { PropertyModule } from './property/property.module';
 
 
 @Module({
@@ -20,6 +21,7 @@ import { OrdersModule } from './orders/orders.module';
     CategoriesModule,
     ProductsModule,
     OrdersModule,
+    PropertyModule,
      
     ],
   controllers: [],

@@ -16,6 +16,6 @@ export class AuthController {
     @Post('login') 
     signIn(@Body() dto:AuthDto) {
         console.log('Request payload:', dto);
-        return this.authService.signIn(dto);
+        return this.authService.signin(dto);
     }
 }

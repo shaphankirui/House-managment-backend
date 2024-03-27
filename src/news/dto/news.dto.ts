@@ -1,7 +1,7 @@
-// src/blog/dto/blog.dto.ts
+
 import { IsString, IsNotEmpty } from 'class-validator';
 
-export class BlogDto {
+export class NewsDto {
   @IsString()
   @IsNotEmpty()
   title: string;

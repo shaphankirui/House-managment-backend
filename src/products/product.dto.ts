@@ -5,6 +5,10 @@ export class ProductDto {
   @IsString()
   @IsNotEmpty()
   name: string;
+  @IsString()
+  model: string;
+  @IsString()
+  SAP: string;
 
   @IsNumber()
   @IsNotEmpty()

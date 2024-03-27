@@ -13,6 +13,8 @@ export class ProductService {
         name: dto.name,
         price: dto.price,
         description: dto.description,
+        model: dto.model,
+        SAP: dto.SAP,
         pictureUrl: dto.picture,  // Assuming this is a URL to the product picture
         availability: dto.availability,
         quantity: dto.quantity,

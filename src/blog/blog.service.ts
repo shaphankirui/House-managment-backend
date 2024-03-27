@@ -29,7 +29,6 @@ export class BlogService {
   }
 
   async getAllBlogs() {
-    return this.prisma.blog.findMany();
     return this.prisma.blog.findMany({
       include: {
         user: {

@@ -10,6 +10,7 @@ import { NewsModule } from './news/news.module';
 import { TendersModule } from './tenders/tenders.module';
 import { CareersModule } from './careers/careers.module';
 import { TeamModule } from './team/team.module';
+import { HousesModule } from './houses/houses.module';
 
 
 
@@ -29,6 +30,7 @@ import { TeamModule } from './team/team.module';
     TendersModule,
     CareersModule,
     TeamModule,
+    HousesModule,
      
     ],
   controllers: [],

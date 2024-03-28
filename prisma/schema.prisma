@@ -25,6 +25,7 @@ model User {
   News      News[]
   Tenders      Tenders[]
   Careers      Careers[]
+  House      House[]
 
   @@map("users")
 }
@@ -153,4 +154,30 @@ model Careers {
 
 
   @@map("careers")
+}
+
+model House {
+  id          Int      @id @default(autoincrement())
+  title        String
+  slug String?
+  description String
+  price String
+  is_open Boolean
+  fileUrl  String?
+  pictureUrl  String[]  // Change to an array of strings
+  country  String?
+  county  String?
+  mapAdress  String?
+  latitude  String?
+  longitude  String?
+  interiorDetails  String[]  // Change to an array of strings
+  outdoorDetails  String[]  // Change to an array of strings
+  Utilities  String[]  // Change to an array of strings
+  otherFeatures  String[]  // Change to an array of strings
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("houses")
 }

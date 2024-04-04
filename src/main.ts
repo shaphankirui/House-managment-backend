@@ -9,7 +9,10 @@ async function bootstrap() {
     whitelist:true
   }));
   app.enableCors({
-    origin: '*',
+    origin: [
+      '*',
+      "https://realestate-management-two.vercel.app",
+    ],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     // credentials: true
   });

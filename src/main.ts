@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: [
       '*',
       "https://realestate-management-two.vercel.app",
+      "https://realestatemanagement-app.vercel.app",
     ],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     // credentials: true

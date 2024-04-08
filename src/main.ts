@@ -13,6 +13,7 @@ async function bootstrap() {
       '*',
       "https://realestate-management-two.vercel.app",
       "https://realestatemanagement-app.vercel.app",
+      "http://localhost:3000",
     ],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     // credentials: true

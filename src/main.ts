@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: [
       '*',
       "https://realestate-management-two.vercel.app",
+      "https://rentalbackoficefrontend.vercel.app",
       "https://realestatemanagement-app.vercel.app",
       "http://localhost:3000",
     ],

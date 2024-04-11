@@ -13,7 +13,7 @@ async function bootstrap() {
       '*',
       "https://realestate-management-two.vercel.app",
       "https://rentalbackoficefrontend.vercel.app",
-      "https://realestatemanagement-app.vercel.app",
+      "https://realestatemanagementapp.vercel.app",
       "https://house-managment-backend.vercel.app",
       "http://localhost:3000",
     ],

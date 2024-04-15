@@ -15,47 +15,47 @@ export class HouseDto {
   price: string;
 
   @IsString({ each: true })
-  @IsNotEmpty()
+  @IsOptional()
   pictureUrl: string[];
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   country: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   mapAdress: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   county: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   latitude: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   longitude: string;
 
   @IsBoolean()
-  @IsNotEmpty()
+  @IsOptional()
   is_open: boolean;
 
   @IsString({ each: true })
-  @IsNotEmpty()
+  @IsOptional()
   interiorDetails: string[];
 
   @IsString({ each: true })
-  @IsNotEmpty()
+  @IsOptional()
   outdoorDetails: string[];
 
   @IsString({ each: true })
-  @IsNotEmpty()
+  @IsOptional()
   Utilities: string[];
 
   @IsString({ each: true })
-  @IsNotEmpty()
+  @IsOptional()
   otherFeatures: string[];
   
 }

@@ -157,27 +157,33 @@ model Careers {
 }
 
 model House {
-  id          Int      @id @default(autoincrement())
-  title        String
-  slug String?
-  description String
-  price String
-  is_open Boolean
-  fileUrl  String?
-  pictureUrl  String[]  // Change to an array of strings
-  country  String?
-  county  String?
-  mapAdress  String?
-  latitude  String?
-  longitude  String?
-  interiorDetails  String[]  // Change to an array of strings
-  outdoorDetails  String[]  // Change to an array of strings
-  Utilities  String[]  // Change to an array of strings
-  otherFeatures  String[]  // Change to an array of strings
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  userId    Int
-  user      User     @relation(fields: [userId], references: [id])
+  id              Int        @id @default(autoincrement())
+  title           String
+  slug            String?
+  description     String
+  price           String
+  is_open         Boolean?
+  fileUrl         String?
+  pictureUrl      String[]   // Change to an array of strings
+  pictureUrlSet   Boolean    @default(false)  // Indicates whether pictureUrl is set or not
+  country         String?
+  county          String?
+  mapAdress       String?
+  latitude        String?
+  longitude       String?
+  interiorDetails String[]   // Change to an array of strings
+  interiorDetailsSet Boolean  @default(false) // Indicates whether interiorDetails is set or not
+  outdoorDetails  String[]   // Change to an array of strings
+  outdoorDetailsSet Boolean  @default(false) // Indicates whether outdoorDetails is set or not
+  Utilities       String[]   // Change to an array of strings
+  UtilitiesSet    Boolean    @default(false)  // Indicates whether Utilities is set or not
+  otherFeatures   String[]   // Change to an array of strings
+  otherFeaturesSet Boolean  @default(false) // Indicates whether otherFeatures is set or not
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  userId          Int
+  user            User       @relation(fields: [userId], references: [id])
 
   @@map("houses")
 }
+
